@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @lists = @board.lists
   end
 
   def new
@@ -27,7 +28,7 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to @board
+      redirect_to boards_path
     else
       render :edit
     end

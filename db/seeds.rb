@@ -4,13 +4,13 @@
     )
   3.times do 
     list = List.create(
-      list_name: Faker::Food.dish,
+      list_name: Faker::Music::RockBand.name,
       board_id: board.id
     )
     3.times do
-        task=Task.create(
-            task_name: Faker::Food.ingredient,
-            description: Faker::Creature::Animal.name,
+        task = Task.create(
+            task_name: Faker::Games::Pokemon.name,
+            description: Faker::Games::Pokemon.move,
             priority: Faker::Number.number(5).to_i,
             list_id: list.id
 

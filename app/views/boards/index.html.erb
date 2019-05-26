@@ -1,3 +1,4 @@
+
 <h1 class="ui header">Boards Home</h1>
 <% @boards.each do |board| %>
 <ul>
@@ -9,7 +10,7 @@
 <%end %>
 <hr />
 <br />
-<%= link_to "New Board", new_board_path %>
+<%= link_to "New Board", new_board_path, class: "ui yellow button" %>
 
 
 

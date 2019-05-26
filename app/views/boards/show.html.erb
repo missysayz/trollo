@@ -1,10 +1,23 @@
 <div class="ui card">
     <div class="content">
-    <p class="header">
+    <p class="header"><%= "Board:" %>
+    <p class="header"><%= @board.board_name %>
+    </p>
+<%= "Lists:" %>
+<% @lists.each do |list| %>
+    <ul>
+    <li><h1><%=list.list_name%></h1></li>
+    </ul>
+    
+    <%= link_to "Show", board_list_path(@board, list), class: "ui blue button" %>
+    <%= link_to "Edit", edit_board_list_path(@board, list), class: "ui green button" %>
+    <%= link_to "Delete", board_list_path(@board, list), method: :delete, class: "ui red button" %>
+    <% end %>
 
-    <%=@board.board_name%>
+    <hr />
+    <br />
  
- <%= link_to "Edit Board", edit_board_path(@board), class: "ui blue button" %>
- <%= link_to "Delete", board_path(@board), method: :delete, class: "ui red button" %>
+ <%= link_to "Add List", new_board_list_path(@board), class: "ui yellow button" %>
+ 
 
 
