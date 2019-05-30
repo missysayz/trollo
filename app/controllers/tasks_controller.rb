@@ -14,13 +14,14 @@ class TasksController < ApplicationController
   end
 
   def edit
+    render :edit
   end
 
   def create
     @task = @list.tasks.new(task_params)
 
     if @task.save
-      redirect_to list_tasks_path(@list)
+      redirect_to list_task_path(@list,@task)
     else
       render :new
     end

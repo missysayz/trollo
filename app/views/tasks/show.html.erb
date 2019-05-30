@@ -4,8 +4,8 @@
     <p class="header"><%= @task.task_name %>
     </p>
     
-    <li><h1><%= "Priority: " %><%=@task.priority%></h1></li>
-    <li><h1><%= "Description: " %><%=@task.description%></h1></li>
+    <li><h3><%= "Priority: " %><%=@task.priority%></h3></li>
+    <li><h4><%= "Description: " %><%=@task.description%></h4></li>
     </ul>
     
     <%= link_to "Edit", edit_list_task_path(@list, @task), class: "ui green button" %>

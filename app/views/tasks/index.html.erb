@@ -1,0 +1,20 @@
+
+<div class="ui card">
+    <div class="content">
+    <p class="header"><%= "List:" %>
+    <p class="header"><%= @list.list_name %>
+    </p>
+
+<%= "Tasks:" %>
+<% @tasks.each do |task| %>
+    <ul>
+    <li><h1><%=task.task_name%></h1></li>
+    <li><%= "Priority: " %><%= task.priority %>
+    </ul>  
+    <%= link_to "Show", list_task_path(@list, task), class: "ui blue button" %>
+    <% end %>
+
+    <hr />
+    <br />
+ 
+ <%= link_to "Add Task", new_list_task_path(@list) , class: "ui yellow button" %>
